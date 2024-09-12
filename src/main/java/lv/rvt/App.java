@@ -10,11 +10,23 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ievadiet 1 skaitli");
+        System.out.println("Ievadiet 1. skaitli");
+        int pirmais = Integer.valueOf(scanner.nextLine());
+        System.out.println("Ievadiet 2. skaitli");
+        int otrais = Integer.valueOf(scanner.nextLine());
+        System.out.println(pirmais + " + " + otrais + " = " + (pirmais + otrais));
+        System.out.println(pirmais + " - " + otrais + " = " + (pirmais - otrais));
+        System.out.println(pirmais + " * " + otrais + " = " + (pirmais * otrais));
+        System.out.println(pirmais + " / " + otrais + " = " + ((double)pirmais / otrais));
+
+        
+        
+        
+        /*System.out.println("Ievadiet 1 skaitli");
         int pirmais = Integer.valueOf(scanner.nextLine());
         System.out.println("Ievadiet 2 skaitli");
         int otrais = Integer.valueOf(scanner.nextLine());
-        System.out.println(pirmais + " + " + otrais + " = " + (pirmais +otrais));
+        System.out.println(pirmais + " + " + otrais + " = " + (pirmais + otrais));*/
 
 
 
