@@ -10,7 +10,29 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Give points [0-100]:");
+        System.out.println("Value of the gift?");
+        int summa = Integer.valueOf(scanner.nextLine());
+
+
+
+        if ( summa < 5000 ) {
+            System.out.println("No tax!");
+        } else if (summa >= 5000 && summa < 25000) {
+            System.out.println("Tax: " + (100 + (summa - 5000) * 0.08));
+        } else if (summa >= 25000 && summa < 55000) {
+
+            System.out.println("Tax: " + (1700 + (summa - 25000) * 0.1));
+        } else if (summa >= 55000 && summa < 200000) {
+ 
+            System.out.println("Tax: " + (4700 + (summa - 55000) * 0.12));
+        } else if (summa >= 200000 && summa < 1000000) {
+
+            System.out.println("Tax: " + (22100 + (summa - 200000) * 0.15));
+        } else if (summa >= 1000000) {
+            System.out.println("Tax: " + (142100 + (summa - 1000000) * 0.17));
+        }
+
+       /* System.out.println("Give points [0-100]:");
 
         int punkti = Integer.valueOf(scanner.nextLine());
 
@@ -30,7 +52,7 @@ public class App
             System.out.println("Grade:5");
         } else if (punkti > 100) {
             System.out.println("Grade:incredible!");
-        }
+        }*/
 
 
        /*  System.out.println("Ievadiet ātrumu:");
