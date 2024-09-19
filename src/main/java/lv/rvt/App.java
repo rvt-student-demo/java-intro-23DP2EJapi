@@ -10,12 +10,29 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Value of the gift?");
+        while (true) {
+            System.out.println("Give a number:");
+            int numurs = Integer.valueOf(scanner.nextLine());
+            if (numurs >= 1) {
+                System.out.println(numurs * numurs);
+                
+            } else if (numurs < 0) {
+                System.out.println("Unsuitable number"); 
+            } else if (numurs == 0) { 
+                break;
+            }
+
+            
+        }
+
+
+
+       /* System.out.println("Value of the gift?");
         int summa = Integer.valueOf(scanner.nextLine());
 
 
 
-        if ( summa < 5000 ) {
+         if ( summa < 5000 ) {
             System.out.println("No tax!");
         } else if (summa >= 5000 && summa < 25000) {
             System.out.println("Tax: " + (100 + (summa - 5000) * 0.08));
@@ -30,7 +47,7 @@ public class App
             System.out.println("Tax: " + (22100 + (summa - 200000) * 0.15));
         } else if (summa >= 1000000) {
             System.out.println("Tax: " + (142100 + (summa - 1000000) * 0.17));
-        }
+        }*/
 
        /* System.out.println("Give points [0-100]:");
 
