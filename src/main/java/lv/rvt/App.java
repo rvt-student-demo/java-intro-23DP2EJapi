@@ -10,7 +10,29 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
+        int numurs = 0;
+        int kopa = 0;
+        int summa = 0;
+
         while (true) {
+            System.out.println("Give a number:");
+            numurs = Integer.valueOf(scanner.nextLine());
+            if (numurs != 0) {
+                kopa = kopa + 1;
+                summa = summa + numurs;
+                
+                
+            } else {
+                break;
+            }
+
+        }
+        System.out.println("Number of numbers:" + kopa);
+        System.out.println("Sum of the numbers:" + summa);
+
+
+
+        /*while (true) {
             System.out.println("Give a number:");
             int numurs = Integer.valueOf(scanner.nextLine());
             if (numurs >= 1) {
@@ -23,7 +45,7 @@ public class App
             }
 
             
-        }
+        }*/
 
 
 
