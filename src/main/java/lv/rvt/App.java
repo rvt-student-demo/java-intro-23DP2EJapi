@@ -10,12 +10,18 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ievdiet skaitī;sanas sākumu");
+       System.out.println("Give a number:");
+       int i= Integer.valueOf(scanner.nextLine());
+       int factorials = 1;
 
-        for(int x= Integer.valueOf(scanner.nextLine()); x <101; x++ ){
-            System.out.println(x);
+        for(int x = 1; x <i + 1; x++ ){
+            if(i == 0){
+                break;
+            } else{
+            factorials = factorials * x;}
 
         }
+        System.out.println("Factorial:" + factorials);
 
         /*int numurs = 0;
         int kopa = 0;
