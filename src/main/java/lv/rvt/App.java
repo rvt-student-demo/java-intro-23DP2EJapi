@@ -10,7 +10,14 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        int numurs = 0;
+        System.out.println("Ievdiet skaitī;sanas sākumu");
+
+        for(int x= Integer.valueOf(scanner.nextLine()); x <101; x++ ){
+            System.out.println(x);
+
+        }
+
+        /*int numurs = 0;
         int kopa = 0;
         int summa = 0;
 
@@ -28,7 +35,7 @@ public class App
 
         }
         System.out.println("Number of numbers:" + kopa);
-        System.out.println("Sum of the numbers:" + summa);
+        System.out.println("Sum of the numbers:" + summa);*/
 
 
 
