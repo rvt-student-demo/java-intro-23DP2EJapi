@@ -10,18 +10,42 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-       System.out.println("Give a number:");
-       int i= Integer.valueOf(scanner.nextLine());
-       int factorials = 1;
+       System.out.println("Give a numbers:");
+       int summa = 0;
+       int numuri = 0;
+       int odd = 0;
+       int even = 0;
 
-        for(int x = 1; x <i + 1; x++ ){
-            if(i == 0){
-                break;
-            } else{
-            factorials = factorials * x;}
+       while (true) {
+        int numurs = Integer.valueOf(scanner.nextLine());
+        if(numurs != -1){
+            summa = numurs + summa;
+            numuri++;
+            if(numurs % 2 == 1){
+                odd++;
 
+            }
+            else{
+                even++;
+            }
+            continue;
         }
-        System.out.println("Factorial:" + factorials);
+        else{
+            break;
+        }
+        
+       }
+       System.out.println("Thx! Bye!");
+       double v = summa;
+       double k = numuri;
+
+       System.out.println("sum:" + summa);
+       System.out.println("Numbers: " + numuri);
+
+       System.out.println("Average: " + (v / k));
+       System.out.println("Even: " + even);
+       System.out.println("Odd: " + odd);
+      
 
         /*int numurs = 0;
         int kopa = 0;
