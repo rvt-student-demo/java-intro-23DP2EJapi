@@ -10,26 +10,20 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("how many times?");
+        System.out.println("Ievadiet numuru: ");
 
-        int i = Integer.valueOf(scanner.nextLine());
-
-        for(int a = 0; a < i; a++ ){
-            printText();
-
-        }
-
-
-
-     
-
+        int a = Integer.valueOf(scanner.nextLine());
+        printUntilNumber(a);
 
 
 
     }
 
-    public static void printText() {
-        System.out.println("In a hole in the ground there lived a method");
+    public static void printUntilNumber(int skaits) {
+        
+        for (int a = 1; a <=skaits; a++)
+        System.out.println(a);
+        
         
     }
 
