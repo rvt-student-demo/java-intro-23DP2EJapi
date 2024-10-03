@@ -10,19 +10,32 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ievadiet numuru: ");
+        System.out.println("Ievadiet sākuma numuru: ");
 
-        int a = Integer.valueOf(scanner.nextLine());
-        printUntilNumber(a);
+        int start = Integer.valueOf(scanner.nextLine());
+        System.out.println("Ievadiet beigu numuru: ");
+
+        int stop = Integer.valueOf(scanner.nextLine());
+        printUntilNumber(start, stop);
 
 
 
     }
 
-    public static void printUntilNumber(int skaits) {
-        
-        for (int a = 1; a <=skaits; a++)
-        System.out.println(a);
+    public static void printUntilNumber(int skaits, int sk) {
+        int a = skaits;
+        for (a = skaits;a <=sk; a++){
+
+            if (a % 3 == 0) {
+                
+            
+
+            System.out.println(a);
+        }
+
+        }
+
+   
         
         
     }
