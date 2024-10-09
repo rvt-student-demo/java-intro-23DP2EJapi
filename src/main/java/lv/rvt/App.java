@@ -9,35 +9,36 @@ public class App
     {
       
         Scanner scanner = new Scanner(System.in);
+        System.out.println("ievada zvaigzņu skaitu");
+        int a =Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Ievadiet sākuma numuru: ");
+        Stars.printStars(a);
 
-        int start = Integer.valueOf(scanner.nextLine());
-        System.out.println("Ievadiet beigu numuru: ");
+        System.out.println("ievada kvadrāta lielumu");
 
-        int stop = Integer.valueOf(scanner.nextLine());
-        printUntilNumber(start, stop);
+        int size = Integer.valueOf(scanner.nextLine());
+        Stars.printSquare(size);
 
+        System.out.println("Ievada taisnstūra garumu: ");
+        int height = Integer.valueOf(scanner.nextLine());
+
+
+        System.out.println("Ievada taisnstūra platumu ");
+
+        int width = Integer.valueOf(scanner.nextLine());
+
+        Stars.printRectangle(width, height);
+
+        System.out.println("Ievadat trijstūra lielumu:");
+        int lielums = Integer.valueOf(scanner.nextLine());
+
+        Stars.printTriangle(lielums);
 
 
     }
 
-    public static void printUntilNumber(int skaits, int sk) {
-        int a = skaits;
-        for (a = skaits;a <=sk; a++){
 
-            if (a % 3 == 0) {
-                
-            
 
-            System.out.println(a);
-        }
 
-        }
-
-   
-        
-        
-    }
 
 }
