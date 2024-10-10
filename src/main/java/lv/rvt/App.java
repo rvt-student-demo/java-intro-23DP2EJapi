@@ -9,7 +9,7 @@ public class App
     {
       
         Scanner scanner = new Scanner(System.in);
-        System.out.println("ievada zvaigzņu skaitu");
+        /*System.out.println("ievada zvaigzņu skaitu");
         int a =Integer.valueOf(scanner.nextLine());
 
         Stars.printStars(a);
@@ -32,7 +32,25 @@ public class App
         System.out.println("Ievadat trijstūra lielumu:");
         int lielums = Integer.valueOf(scanner.nextLine());
 
-        Stars.printTriangle(lielums);
+        Stars.printTriangle(lielums);*/
+
+        System.out.println("ievada trijstūra lielumu:");
+
+        int size = Integer.valueOf(scanner.nextLine());
+
+        Stars.printRightTriangle(size);
+        System.out.println();
+
+        System.out.println("ievada Egles lielumu:");
+
+        int izmers = Integer.valueOf(scanner.nextLine());
+
+        Stars.christmasTree(izmers);
+
+
+
+
+
 
 
     }
