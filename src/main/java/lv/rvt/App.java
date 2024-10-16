@@ -9,6 +9,49 @@ public class App
     {
       
         Scanner scanner = new Scanner(System.in);
+        //Jauns masīvs
+
+
+
+
+
+       ArrayList<String> strlist = new ArrayList<>();
+
+        while (true) {
+            System.out.println("Kāds ir vārds:");
+            String vards = scanner.nextLine();
+            if (vards.equals("")) {
+                break;
+                
+            }
+            strlist.add(vards);
+            
+            
+        }
+        System.out.println(strlist.get(2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*System.out.println("ievada zvaigzņu skaitu");
         int a =Integer.valueOf(scanner.nextLine());
 
@@ -34,7 +77,7 @@ public class App
 
         Stars.printTriangle(lielums);*/
 
-        System.out.println("ievada trijstūra lielumu:");
+        /*System.out.println("ievada trijstūra lielumu:");
 
         int size = Integer.valueOf(scanner.nextLine());
 
@@ -45,11 +88,7 @@ public class App
 
         int izmers = Integer.valueOf(scanner.nextLine());
 
-        Stars.christmasTree(izmers);
-
-
-
-
+        Stars.christmasTree(izmers);*/
 
 
 
