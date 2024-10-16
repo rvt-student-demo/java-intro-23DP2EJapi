@@ -10,12 +10,25 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
         //Jauns masīvs
+        ArrayList<Integer> numuri = new ArrayList<>();
+        int summa = 0;
+
+        while (true){
+            System.out.println("Ievadiet skaitli");
+            int a = Integer.valueOf(scanner.nextLine());
+            if(a == 0){
+                break;
+            }
+            numuri.add(a);
+            summa = summa + a;
+        }
+        System.out.println("Visu elementu summa ir " + summa);
+        System.out.println("2. un 3. elementa summa ir "+ (numuri.get(1) + numuri.get(2)));
 
 
 
 
-
-       ArrayList<String> strlist = new ArrayList<>();
+      /*  ArrayList<String> strlist = new ArrayList<>();
 
         while (true) {
             System.out.println("Kāds ir vārds:");
@@ -28,7 +41,7 @@ public class App
             
             
         }
-        System.out.println(strlist.get(2));
+        System.out.println(strlist.get(2));*/
 
 
 
