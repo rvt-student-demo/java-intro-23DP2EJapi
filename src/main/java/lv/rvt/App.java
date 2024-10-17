@@ -10,7 +10,60 @@ public class App
       
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int cipar = random.nextInt(11)+1;
+        // 4 uzdevums
+        int uzvaras = 0;
+        int meginajumi = 3;
+        int cipar = 0;
+        int minejums = 0;
+
+        for (int a = 0; a<10; a++){
+        cipar = random.nextInt(10)+1;;
+        System.out.println("I am thinking of a number from 1 to 10." );
+        System.out.println("You must guess what it is in three tries.");
+        System.out.println("Enter a guess:");
+        
+        while (meginajumi != 0) {
+            minejums = Integer.valueOf(scanner.nextLine());
+            if (minejums == cipar) {
+                System.out.println("RIGHT!");
+                uzvaras++;
+                break;
+
+            } else if(minejums> cipar  && minejums - cipar == 1 || minejums - cipar == -1){
+                System.out.println("Hot");
+                meginajumi--;
+
+
+            } else if(minejums > cipar  && minejums - cipar == 2 || minejums - cipar == -2){
+                System.out.println("Warm");
+                meginajumi--;
+
+
+            } else{
+                System.out.println("Cold");
+                meginajumi--;
+            }
+        
+        }
+        if (meginajumi == 0) {
+            System.out.println("The correct number was " + cipar);
+        }
+
+        System.out.println("You have won " + uzvaras + "out of" + (a + 1) + "rounds");
+        meginajumi = 3;
+
+        }
+
+        rank(uzvaras);
+
+
+
+
+
+
+
+        // 3 b uzdevums
+       /* int cipar = random.nextInt(11)+1;
         int punkti = 5;
         System.out.println("I am thinking of a number from 1 to 10.");
         System.out.println("Try to guess the number.");
@@ -44,7 +97,7 @@ public class App
 
             
         }
-        System.out.println("Your score is " + punkti);
+        System.out.println("Your score is " + punkti);*/
 
 
         //Jauns masīvs
@@ -81,70 +134,22 @@ public class App
         }
         System.out.println(strlist.get(2));*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*System.out.println("ievada zvaigzņu skaitu");
-        int a =Integer.valueOf(scanner.nextLine());
-
-        Stars.printStars(a);
-
-        System.out.println("ievada kvadrāta lielumu");
-
-        int size = Integer.valueOf(scanner.nextLine());
-        Stars.printSquare(size);
-
-        System.out.println("Ievada taisnstūra garumu: ");
-        int height = Integer.valueOf(scanner.nextLine());
-
-
-        System.out.println("Ievada taisnstūra platumu ");
-
-        int width = Integer.valueOf(scanner.nextLine());
-
-        Stars.printRectangle(width, height);
-
-        System.out.println("Ievadat trijstūra lielumu:");
-        int lielums = Integer.valueOf(scanner.nextLine());
-
-        Stars.printTriangle(lielums);*/
-
-        /*System.out.println("ievada trijstūra lielumu:");
-
-        int size = Integer.valueOf(scanner.nextLine());
-
-        Stars.printRightTriangle(size);
-        System.out.println();
-
-        System.out.println("ievada Egles lielumu:");
-
-        int izmers = Integer.valueOf(scanner.nextLine());
-
-        Stars.christmasTree(izmers);*/
-
-
-
     }
-
+    public static void rank(int uzvaras) {
+        if (uzvaras == 10) {
+            System.out.println("hackers");
+            
+        } else if (uzvaras == 9) {
+            System.out.println("professionals");
+        } else if (uzvaras == 8) {
+            System.out.println("advanced");
+        } else if (uzvaras == 7) {
+            System.out.println("amateurs");
+        } else {
+            System.out.println("Don't have a rank");
+        }
+        
+    }
 
 
 
