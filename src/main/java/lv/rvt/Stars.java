@@ -53,15 +53,12 @@ public class Stars {
     }
 
     public static void printRightTriangle(int size) {
-        for (int b = 0; b < size + 2; b++){
+        for (int b = 0; b < size + 1; b++){
             System.out.println("");
             printSpaces(size - b);
             for (int c = 0; c < b; c++){
             
                System.out.print ("*");
-            }
-            if(b == size){
-                break;
             }
         }
 
