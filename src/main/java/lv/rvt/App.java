@@ -7,49 +7,31 @@ public class App
 {
     public static void main( String[] args )
     {
-        Agent bond = new Agent("James", "Bond");
+        Scanner scanner = new Scanner(System.in);
+        int ievade = 0;
+ 
+        Statistics statistics = new Statistics();
+        /*statistics.addNumber(3);
+        statistics.addNumber(5);
+        statistics.addNumber(1);
+        statistics.addNumber(2);
+        System.out.println("Count: " + statistics.getCount());
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Average: " + statistics.average());*/
 
-        bond.toString(); // prints nothing
-        System.out.println(bond);
+        while(true){
+            
+            ievade = Integer.valueOf(scanner.nextLine());
+            if (ievade == -1) {
+                break;
+                
+            }
+            statistics.addNumber(ievade);
 
-        Agent ionic = new Agent("Ionic", "Bond");
-        System.out.println(ionic);
-
-        /*DecreasingCounter counter = new DecreasingCounter(100);
-
-        counter.printValue();
-
-        counter.decrement();
-        counter.printValue();
-
-        counter.reset();
-        counter.printValue();
-
-        counter.decrement();
-        counter.printValue();
-
-        counter.decrement();
-        counter.printValue();*/
-        
-        /*Person ada = new Person("Ada");
-        Person antti = new Person("Antti");
-
-        ada.printPerson();
-        antti.printPerson();
-        System.out.println("");
-
-        ada.growOlder();
-        ada.growOlder();
-
-        ada.printPerson();
-        antti.printPerson();
-
-        Product prece = new Product("Piens", 3.86, 92);
-        Product banans = new Product("Banāni", 2.12, 1548);
-        prece.printProduct();
-        banans.printProduct();*/
-
-
+        }
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Sum of even numbers: " + statistics.sumeven());
+        System.out.println("Sum of ood numbers: " + statistics.sumodd());
     }
 
 
