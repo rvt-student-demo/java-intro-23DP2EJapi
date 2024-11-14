@@ -7,15 +7,15 @@ public class Person {
     private int height;
 
     //Class constructor
-    public Person(String name) {
+    public Person(String name, int age, int weight, int height) {
         this.name = name;
-        this.age = 0;
-        this.weight = 0;
-        this.height = 0;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
     }
 
     public String toString() {
-        return this.name + ", age " + this.age + " years, my body mas index is " + this.bodyMassIndex();
+        return this.name + ", age " + this.age + " years, weight " + this.weight + ", height " + this.height;
     }
 
     public void printPerson() {

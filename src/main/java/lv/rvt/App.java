@@ -2,52 +2,50 @@ package lv.rvt;
 
 import java.util.*;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
+
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args) throws  Exception 
     {
-        Scanner scanner = new Scanner(System.in);
-        PaymentCard paulsCard = new PaymentCard(20);
-        PaymentCard mattsCard = new PaymentCard(30);
-        paulsCard.eatHeartily();
-        mattsCard.eatAffordably();
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
-        paulsCard.addMoney(20);
-        mattsCard.eatHeartily();
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
-        paulsCard.eatAffordably();
-        paulsCard.eatAffordably();
-        mattsCard.addMoney(50);
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
+        BufferedReader reader = Utils.getReader("persons.csv");
+        ArrayList<Person> persons = new ArrayList<>();
+        
+        String line;
+        int avr_age = 0;
+        int dal = 0;
+        line = reader.readLine();
 
-        /*int ievade = 0;
- 
-        Statistics statistics = new Statistics();*/
-        /*statistics.addNumber(3);
-        statistics.addNumber(5);
-        statistics.addNumber(1);
-        statistics.addNumber(2);
-        System.out.println("Count: " + statistics.getCount());
-        System.out.println("Sum: " + statistics.sum());
-        System.out.println("Average: " + statistics.average());*/
 
-        /*while(true){
+        
+        
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(", ");
+
             
-            ievade = Integer.valueOf(scanner.nextLine());
-            if (ievade == -1) {
-                break;
+            
+            Person person = new Person(
+                parts[0], Integer.valueOf( parts[1]), Integer.valueOf( parts[2]), Integer.valueOf( parts[3])
+                );
+                persons.add(person);
+                avr_age = avr_age + Integer.valueOf( parts[1]);
+                dal = dal + 1;
+                
                 
             }
-            statistics.addNumber(ievade);
-
-        }
-        System.out.println("Sum: " + statistics.sum());
-        System.out.println("Sum of even numbers: " + statistics.sumeven());
-        System.out.println("Sum of ood numbers: " + statistics.sumodd());*/
+            
+            
+            for(Person i : persons) {
+                System.out.println(i);
+                
+            }
+            
+            System.out.println("Average age of person:" + avr_age*1.0 / dal);
+            
+            
     }
 
 
