@@ -63,6 +63,10 @@ public class Person {
         return this.weight / (heigthPerHundred * heigthPerHundred);
     }
 
+    public String toCsvRow(){
+     return this.name + ", " + this.age + ", " + this.weight + ", " +this.height;
+    }
+
 
 
 }
