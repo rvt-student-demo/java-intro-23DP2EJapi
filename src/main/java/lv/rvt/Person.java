@@ -15,7 +15,7 @@ public class Person {
     }
 
     public String toString() {
-        return this.name + ", age " + this.age + " years, weight " + this.weight + ", height " + this.height;
+        return this.name + ", age " + this.age + " years, weight " + this.weight + "kg " + ", height " + this.height + "cm";
     }
 
     public void printPerson() {
