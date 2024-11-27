@@ -25,6 +25,9 @@ public class Person {
     public void growOlder(){
         this.age = this.age + 1;
     }
+    public void growOlder(int years){
+        this.age = this.age + years;
+    }
 
     public int returnAge(){
         return this.age;
