@@ -2,18 +2,33 @@ package lv.rvt;
 
 public class Product {
     private String initialName;
-    private double initialPrice;
-    private int initialQuantity;
+    private String location;
+    private int weight;
 
-    public Product (String initialName, double initialPrice, int initialQuantity){
+    public Product (String initialName, String location, int initialQuantity){
         this.initialName = initialName;
-        this.initialPrice = initialPrice;
-        this.initialQuantity = initialQuantity;
+        this.location = location;
+        this.weight = initialQuantity;
 
     }
+    public Product(String name){
+        this.initialName = name;
+        this.location = "shelf";
+        this.weight = 1 ;
+    }
+public Product(String name, String location){
+    this.initialName = name;
+    this.location = location;
+    this.weight = 1 ;
+}
+public Product(String name, int weight){
+    this.initialName = name;
+    this.location = "shelf";
+    this.weight = weight ;
+}
 
-    public void printProduct(){
-        System.out.println(this.initialName + " maksā:" + this.initialPrice + "Euro pieejami:" + this.initialQuantity);
+    public String toString() {
+        return this.initialName + "(" + this.weight + " kg)" + " can be found from the " + this.location;
     }
 
 }
