@@ -7,7 +7,7 @@ public class Person {
     private int height;
 
     //Class constructor
-    public Person(String name, int age, int weight, int height) {
+    public Person(String name, int age, int height, int weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -31,6 +31,9 @@ public class Person {
 
     public int returnAge(){
         return this.age;
+    }
+    public int getWeight(){
+        return this.weight;
     }
 
     public boolean isOfLeagalAge(){
