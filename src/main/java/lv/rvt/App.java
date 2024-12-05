@@ -2,6 +2,7 @@ package lv.rvt;
 
 import java.util.*;
 
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.nio.file.StandardOpenOption;
@@ -10,69 +11,61 @@ import java.nio.file.StandardOpenOption;
 
 public class App 
 {
-    public static void main( String[] args) {
-        //Scanner scanner = new Scanner(system.in);
+    public static void main( String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader reader = Helper.getReader("persons.csv");
+        ArrayList<Person> persons = new ArrayList<>();
+        String line;
+        line = reader.readLine();
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(", ");
 
-        PaymentTerminal unicafeExactum = new PaymentTerminal();
-        System.out.println(unicafeExactum);
+            
+            
+            Person person = new Person(
+                parts[0], Integer.valueOf( parts[1]), Integer.valueOf( parts[2]), Integer.valueOf( parts[3])
+                );
+                persons.add(person);
+                
+            }
 
-        PaymentCard annesCard = new PaymentCard(2);
+        boolean isRunning = true;
+        System.out.println("Šī ir programma, kas veic darbības ar persons.csv failu.");
 
-        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
+        while (isRunning) {
+            System.out.println("Ievadiet komandu:");
+            String command = scanner.nextLine();
+           
+            if(command.equals("help")){
+                System.out.println("show: Izvada visas personas");
+                System.out.println("add: pievieno personu");
+                System.out.println("help: parāda visas komandas");
+                System.out.println("exit: izbeidz programmu");
 
-        boolean wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
+            } else if (command.equals("show")) {
+                System.out.println(PersonManager.getPersonsLists());
+                for(Person i : persons) {
+                    System.out.println(i);
+                    
+                }
+            } else if (command.equals("exit")){
+                isRunning= false;
+            } else if (command.equals("add")) {
+                System.out.println("Ivadie personas Vārdu:");
+                String name = scanner.nextLine();
+                System.out.println("Ivadie personas vecumu:");
+                int age = Integer.valueOf(scanner.nextLine());
+                System.out.println("Ivadie personas augumu:");
+                int weight = Integer.valueOf(scanner.nextLine());
+                System.out.println("Ivadie personas svaru:");
+                int height = Integer.valueOf(scanner.nextLine());
+                Person person = new Person(name, age, weight, height);
+                PersonManager.addPersons(person);
+                persons.add(person);
 
-        unicafeExactum.addMoneyToCard(annesCard, 100);
-
-        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-
-        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
-
-        System.out.println(unicafeExactum);
-
-        /*PaymentTerminal unicafeExactum = new PaymentTerminal();
-
-        double change = unicafeExactum.eatAffordably(10);
-        System.out.println("remaining change: " + change);
-
-        PaymentCard annesCard = new PaymentCard(7);
-
-        boolean wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-        wasSuccessful = unicafeExactum.eatAffordably(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-
-        System.out.println(unicafeExactum);*/
-
-   /* HealthStation childrensHospital = new HealthStation();
-
-    Person ethan = new Person("Ethan", 1, 110, 7);
-    Person peter = new Person("Peter", 33, 176, 85);
-
-    System.out.println("weighings performed: " + childrensHospital.weighings());
-
-    childrensHospital.weigh(ethan);
-    childrensHospital.weigh(peter);
-
-    System.out.println("weighings performed: " + childrensHospital.weighings());
-
-    childrensHospital.weigh(ethan);
-    childrensHospital.weigh(ethan);
-    childrensHospital.weigh(ethan);
-    childrensHospital.weigh(ethan);
-
-    System.out.println("weighings performed: " + childrensHospital.weighings());*/
-
-
-        /*BufferedWriter writer = Helper.getWriter("persons.csv", StandardOpenOption.APPEND);
-
-        Person person = new Person("Peteris", 80, 946, 15);
-        PersonManager.addPersons(person);
-        double sk = Integer.valueOf(scanner.nextLine());*/
+            }
+        }
+        
         
 
 
