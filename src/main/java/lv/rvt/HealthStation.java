@@ -3,7 +3,7 @@ package lv.rvt;
 public class HealthStation {
      int x = 0;
  
-    public int weigh(Person person) {
+    public double weigh(Person person) {
         this.x = this.x + 1;
         return person.getWeight() ;
         

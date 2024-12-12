@@ -3,19 +3,60 @@ package lv.rvt;
 public class Person {
     private String name;
     private int age;
-    private int weight;
+    private double weight;
     private int height;
+    private SimpleDate birthday;
+
+
 
     //Class constructor
-    public Person(String name, int age, int height, int weight) {
+    public Person(String name, int age, int height, double weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.height = height;
     }
+    public Person(String name, SimpleDate bday, int height, double weight) {
+        this.name = name;
+        this.birthday = bday;
+        this.weight = weight;
+        this.height = height;
+
+    }
+    public Person(String name, SimpleDate date) {
+        this.name = name;
+        this.birthday = date;
+    }
+    public Person(String name, int day, int month, int year) {
+        this.name = name;
+        this.birthday = new SimpleDate(day, month, year);
+    }
+
+    public boolean equals(Object compared) {
+        if (this == compared) {
+            return true;
+        }
+
+        if (!(compared instanceof Person)) {
+            return false;
+        }
+
+        Person comparedPerson = (Person) compared;
+
+        if (this.name == comparedPerson.name
+                && this.height == comparedPerson.height
+                && this.weight == comparedPerson.weight
+                && this.birthday.getYear() == comparedPerson.birthday.getYear()
+                && this.birthday.getMonth() == comparedPerson.birthday.getMonth()
+                && this.birthday.getDay() == comparedPerson.birthday.getDay()) {
+            return true;
+        }
+
+        return false;
+    }
 
     public String toString() {
-        return this.name + ", age " + this.age + " years, weight " + this.weight + "kg " + ", height " + this.height + "cm";
+        return this.name + ", born on " + this.birthday;
     }
 
     public void printPerson() {
@@ -32,7 +73,7 @@ public class Person {
     public int returnAge(){
         return this.age;
     }
-    public int getWeight(){
+    public double getWeight(){
         return this.weight;
     }
 
@@ -60,7 +101,7 @@ public class Person {
         this.height = newHeight;
     }
 
-    public void setWeight(int newWeight) {
+    public void setWeight(double newWeight) {
         this.weight = newWeight;
     }
 
