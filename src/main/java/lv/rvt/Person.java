@@ -6,6 +6,7 @@ public class Person {
     private double weight;
     private int height;
     private SimpleDate birthday;
+    private double bodyMassIndex;
 
 
 
@@ -55,9 +56,7 @@ public class Person {
         return false;
     }
 
-    public String toString() {
-        return this.name + ", born on " + this.birthday;
-    }
+
 
     public void printPerson() {
         System.out.println(this.name + ", age " + this.age + " years");
@@ -107,11 +106,11 @@ public class Person {
 
     public double bodyMassIndex() {
         double heigthPerHundred = this.height / 100.0;
-        return this.weight / (heigthPerHundred * heigthPerHundred);
+        this.bodyMassIndex = this.weight / (heigthPerHundred * heigthPerHundred);
+        return this.bodyMassIndex;
     }
-
     public String toCsvRow(){
-     return this.name + ", " + this.age + ", " + this.weight + ", " +this.height;
+     return this.name + ", " + this.age + ", " + this.weight + ", " +this.height + ", " + this.bodyMassIndex;
     }
 
 

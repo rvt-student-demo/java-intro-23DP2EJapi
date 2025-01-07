@@ -12,7 +12,17 @@ import java.nio.file.StandardOpenOption;
 public class App 
 {
     public static void main( String[] args) throws Exception {
-        //Scanner scanner = new Scanner(System.in);
+
+        Box box = new  Box( 2.5, 5.0, 6.0 ) ;
+        Box NewBox = new Box(box);
+        System.out.println( "Area: "  + NewBox.area() + " volume: " + box. volume() );
+        System.out.println( "topArea: "  + NewBox.length() * NewBox.width() );
+System.out.println(box.biggerBox(box));
+
+
+
+
+        /*Scanner scanner = new Scanner(System.in);
 
         SimpleDate date = new SimpleDate(24, 3, 2017);
         SimpleDate date2 = new SimpleDate(23, 7, 2017);
@@ -37,7 +47,7 @@ public class App
 
         if(niks.equals(leo)){
             System.out.println("twins");
-        }
+        }*/
 
 
 
@@ -74,7 +84,7 @@ public class App
             } else if (command.equals("show")) {
                
                 for(Person i : persons) {
-                    System.out.println(i);
+                    System.out.println( i);
                     
                 }
             } else if (command.equals("exit")){
@@ -93,8 +103,8 @@ public class App
                 persons.add(person);
 
             }
-        }*/
-        
+        }
+        */
         
 
 
