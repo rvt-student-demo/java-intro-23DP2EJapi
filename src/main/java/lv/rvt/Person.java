@@ -1,16 +1,21 @@
 package lv.rvt;
 
 public class Person {
-    private String name;
+    public String name;
     private int age;
     private double weight;
     private int height;
     private SimpleDate birthday;
     private double bodyMassIndex;
+    public String addres;
 
 
 
     //Class constructor
+    public Person(String name, String addres){
+        this.name = name;
+        this.addres = addres;
+    }
     public Person(String name, int age, int height, double weight) {
         this.name = name;
         this.age = age;
@@ -111,6 +116,10 @@ public class Person {
     }
     public String toCsvRow(){
      return this.name + ", " + this.age + ", " + this.weight + ", " +this.height + ", " + this.bodyMassIndex;
+    }
+
+    public String toString() {
+        return String.format( this.name + " \n   " + this.addres );
     }
 
 
