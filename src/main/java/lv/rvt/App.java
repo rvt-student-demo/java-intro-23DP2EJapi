@@ -13,12 +13,13 @@ public class App
 {
     public static void main( String[] args) throws Exception {
 
+        ProductWarehouse juice = new ProductWarehouse(1000.0, "Juice");
+juice.addToWarehouse(1000.0);
+juice.takeFromWarehouse(11.3);
+System.out.println(juice.getName()); 
+juice.addToWarehouse(1.0);
+System.out.println(juice);
 
-            ArrayList<Person> persons = new ArrayList<Person>();
-            persons.add(new Teacher("Ada Lovelace", "24 Maddox St. London W1S 2QN", 1200));
-            persons.add(new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028"));
-        
-            printPersons(persons);
 
     }
     public static void printPersons(ArrayList<Person> persons) {

@@ -4,7 +4,6 @@ public class Box {
     private double width;
     private double height;
     private double length;
-    private double side;
     public Box box;
 
     public Box(double width, double height, double length){
@@ -13,6 +12,12 @@ public class Box {
      this.length = length;
      
     }
+    public Box(double size){
+        this.height = size;
+        this.width = size;
+        this.length = size;
+        
+       }
     public  Box( Box oldBox ){
         this.box = oldBox;
 
@@ -25,16 +30,16 @@ public class Box {
     public double volume(){
         return this.width * this.length * this.height;
     }
-    private void faceArea(){
-        double faceArea = this.height * this.length;
+    private double faceArea(){
+        return this.height * this.length;
     }
 
-    private void topArea(){
-        double topArea = this.width * this.length;
+    private double topArea(){
+        return this.width * this.length;
     }
 
-    private void sideArea(){
-        double sideArea = this.height * this.width;
+    private double sideArea(){
+        return this.height * this.width;
     }
     public double length(){
         return this.length;

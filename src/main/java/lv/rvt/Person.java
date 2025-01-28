@@ -9,30 +9,31 @@ public class Person {
     private double bodyMassIndex;
     public String addres;
 
-
-
     //Class constructor
     public Person(String name, String addres){
         this.name = name;
         this.addres = addres;
     }
+
     public Person(String name, int age, int height, double weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.height = height;
     }
+
     public Person(String name, SimpleDate bday, int height, double weight) {
         this.name = name;
         this.birthday = bday;
         this.weight = weight;
         this.height = height;
-
     }
+
     public Person(String name, SimpleDate date) {
         this.name = name;
         this.birthday = date;
     }
+
     public Person(String name, int day, int month, int year) {
         this.name = name;
         this.birthday = new SimpleDate(day, month, year);
@@ -61,8 +62,6 @@ public class Person {
         return false;
     }
 
-
-
     public void printPerson() {
         System.out.println(this.name + ", age " + this.age + " years");
     }
@@ -70,6 +69,7 @@ public class Person {
     public void growOlder(){
         this.age = this.age + 1;
     }
+
     public void growOlder(int years){
         this.age = this.age + years;
     }
@@ -77,6 +77,7 @@ public class Person {
     public int returnAge(){
         return this.age;
     }
+
     public double getWeight(){
         return this.weight;
     }
@@ -114,15 +115,12 @@ public class Person {
         this.bodyMassIndex = this.weight / (heigthPerHundred * heigthPerHundred);
         return this.bodyMassIndex;
     }
+
     public String toCsvRow(){
      return this.name + ", " + this.age + ", " + this.weight + ", " +this.height + ", " + this.bodyMassIndex;
     }
 
     public String toString() {
-        return String.format( this.name + " \n   " + this.addres );
+        return String.format( this.name + " \n   " + this.addres + this.age);
     }
-
-
-
 }
-

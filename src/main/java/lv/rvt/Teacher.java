@@ -6,7 +6,6 @@ public class Teacher extends Person {
     public Teacher(String name, String addres, int salary){
         super(name, addres);
         this.salary = salary;
-
     }
 
     public int credits(){
