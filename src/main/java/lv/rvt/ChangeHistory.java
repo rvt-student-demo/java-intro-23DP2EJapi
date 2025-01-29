@@ -3,58 +3,59 @@ package lv.rvt;
 import java.util.ArrayList;
 
 public class ChangeHistory {
-    private ArrayList<Double> ChangeHistory;
-    public ChangeHistory(){
-        this.ChangeHistory = new ArrayList<>();
+    private ArrayList<Double> changeHistory;
+    
+    public ChangeHistory() {
+        this.changeHistory = new ArrayList<>();
     }
-
+    
     public void add(double status) {
-        this.ChangeHistory.add(status);
-
+        this.changeHistory.add(status);
     }
-
-    public void clear(){
-        this.ChangeHistory.clear();
+    
+    public void clear() {
+        this.changeHistory.clear();
     }
-
-    public String toString() {
-        return this.ChangeHistory.toString();
-    }
-
+    
     public double maxValue() {
-        if (this.ChangeHistory.size() == 0) {
+        if (this.changeHistory.size() == 0) {
             return 0;
         }
         double largest = 0;
-        for (double value: this.ChangeHistory){
+        for (double value : this.changeHistory) {
             if (value > largest) {
                 largest = value;
             }
         }
-
         return largest;
     }
-
+    
     public double minValue() {
-        if (this.ChangeHistory.size() == 0) {
+        if (this.changeHistory.size() == 0) {
             return 0;
         }
-        double smalest = 0;
-        for (double value: this.ChangeHistory){
-            if (value < smalest) {
-                smalest = value;
+        double smallest = Integer.MAX_VALUE;
+        for (double value : this.changeHistory) {
+            if (value < smallest) {
+                smallest = value;
             }
         }
-
-        return smalest;
+        return smallest;
     }
-
-    public double average(){
-        if (this.ChangeHistory.size() == 0) {
+    
+    public double average() {
+        if (this.changeHistory.size() == 0) {
             return 0;
         }
-        
-
+        double sum = 0;
+        for (double value : this.changeHistory) {
+            sum += value;
+        }
+        return (1.0 * sum / this.changeHistory.size());
     }
-
+    
+    @Override
+    public String toString() {
+        return this.changeHistory.toString();
+    }
 }

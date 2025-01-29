@@ -13,12 +13,12 @@ public class App
 {
     public static void main( String[] args) throws Exception {
 
-        ProductWarehouse juice = new ProductWarehouse(1000.0, "Juice");
-juice.addToWarehouse(1000.0);
-juice.takeFromWarehouse(11.3);
-System.out.println(juice.getName()); 
-juice.addToWarehouse(1.0);
-System.out.println(juice);
+        ProductWarehouseWithHistory juice = new ProductWarehouseWithHistory("Juice", 1000.0, 1000.0);
+        juice.takeFromWarehouse(11.3);
+        juice.addToWarehouse(1.0);
+
+
+        juice.printAnalysis();
 
 
     }
