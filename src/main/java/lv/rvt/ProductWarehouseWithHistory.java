@@ -10,13 +10,11 @@ public class ProductWarehouseWithHistory extends ProductWarehouse {
         this.productHistory.add(initialBalance);
     }
     
-    @Override
     public void addToWarehouse(double amount) {
         super.addToWarehouse(amount);
         this.productHistory.add(super.getBalance());
     }
 
-    @Override
     public double takeFromWarehouse(double amount) {
         double amountGot = super.takeFromWarehouse(amount);
         this.productHistory.add(super.getBalance());

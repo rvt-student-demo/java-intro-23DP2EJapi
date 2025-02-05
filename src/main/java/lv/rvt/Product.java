@@ -1,9 +1,18 @@
 package lv.rvt;
 
-public class Product {
-    private String initialName;
+public abstract class Product {
+    protected String initialName;
     private String location;
-    private int weight;
+    protected int weight;
+    protected double totallprice;
+
+    public Product(int a, double x, String name){
+        this.weight = a;
+        this.totallprice = x;
+        this.initialName = name;
+
+
+    }
 
     public Product (String initialName, String location, int initialQuantity){
         this.initialName = initialName;
@@ -21,6 +30,9 @@ public Product(String name, String location){
     this.location = location;
     this.weight = 1 ;
 }
+
+public abstract double getAveragePrice (); 
+
 public Product(String name, int weight){
     this.initialName = name;
     this.location = "shelf";

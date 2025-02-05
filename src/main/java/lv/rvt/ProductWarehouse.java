@@ -3,9 +3,9 @@ package lv.rvt;
 public class ProductWarehouse extends Warehouse {
     private String name;
     
-    public ProductWarehouse(String productName, double capacity) {
+    public ProductWarehouse(String Name, double capacity) {
         super(capacity);
-        this.name = productName;
+        this.name = Name;
     }
     public String getName(){
         return this.name;
