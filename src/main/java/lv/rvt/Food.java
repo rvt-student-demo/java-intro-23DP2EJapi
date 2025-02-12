@@ -11,7 +11,7 @@ public class Food extends Product{
 
     @Override
     public double getAveragePrice() {
-        return super.weight / super.totallprice;
+        return super.totallprice / super.weight ;
     }
 
 }
