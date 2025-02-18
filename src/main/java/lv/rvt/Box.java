@@ -1,67 +1,42 @@
 package lv.rvt;
 
-public class Box {
-    private double width;
-    private double height;
-    private double length;
-    public Box box;
+public class Box implements Packable {
+    private double maxWeight;
+    private int count;
+    private double weight;
 
-    public Box(double width, double height, double length){
-     this.height = height;
-     this.width = width;
-     this.length = length;
-     
+    public Box(int x){
+        this.maxWeight = x;
     }
-    public Box(double size){
-        this.height = size;
-        this.width = size;
-        this.length = size;
+    @Override
+    public double weight() {
         
-       }
-    public  Box( Box oldBox ){
-        this.box = oldBox;
-
+        return this.weight;
     }
 
-    public double area(){
+    public void add(Book a){
+      this.maxWeight = this.maxWeight - a.weight();
+      this.count += 1; 
+      this.weight = this.weight + a.weight();
 
-    return this.width * this.length;
     }
-    public double volume(){
-        return this.width * this.length * this.height;
-    }
-    private double faceArea(){
-        return this.height * this.length;
-    }
+    public void add(CD a){
+        this.maxWeight = this.maxWeight - a.weight();
+        this.count += 1; 
+        this.weight = this.weight + a.weight();
+  
+      }
 
-    private double topArea(){
-        return this.width * this.length;
-    }
+      public void add(Box a){
+        this.maxWeight = this.maxWeight - a.weight();
+        this.count += 1; 
+        this.weight = this.weight + a.weight();
+  
+      }
 
-    private double sideArea(){
-        return this.height * this.width;
+      @Override
+    public String toString(){
+        return "Box:" + this.count + " items, total weight " + this.weight + " kg";
     }
-    public double length(){
-        return this.length;
-    }
-    
-    public double height(){
-        return this.height;
-    }
-    
-    public double width(){
-        return this.width;
-    }
-    public Box biggerBox( Box oldBox )
-{
-
-  return new Box( 1.25*oldBox.width(), 1.25*oldBox.height(), 1.25*oldBox.length());
-}
-public boolean nests( Box outsideBox, Box insideBox){
-    if (outsideBox.length() > insideBox.length() && outsideBox.height() > insideBox.height() && outsideBox.width() > insideBox.width() ){
-        return true;
-    }
-    return false;
-}
 
 }
