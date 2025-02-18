@@ -28,9 +28,11 @@ public class Box implements Packable {
       }
 
       public void add(Box a){
-        this.maxWeight = this.maxWeight - a.weight();
-        this.count += 1; 
-        this.weight = this.weight + a.weight();
+          if(this.maxWeight < a.weight()){
+            this.maxWeight = this.maxWeight - a.weight();
+            this.count += 1; 
+            this.weight = this.weight + a.weight();
+        }
   
       }
 
