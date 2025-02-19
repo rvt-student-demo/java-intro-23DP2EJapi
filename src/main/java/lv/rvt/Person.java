@@ -39,6 +39,10 @@ public class Person {
         this.birthday = new SimpleDate(day, month, year);
     }
 
+    public String getAdress(){
+        return this.addres;
+    }
+
     public boolean equals(Object compared) {
         if (this == compared) {
             return true;
