@@ -5,6 +5,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 public class PersonManager {
+    private static final String delimiter = ", ";
+
 
     public static ArrayList<Person> getPersonsLists() throws  Exception
     {

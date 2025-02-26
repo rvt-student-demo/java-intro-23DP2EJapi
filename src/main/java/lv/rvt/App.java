@@ -12,6 +12,24 @@ import java.nio.file.StandardOpenOption;
 public class App 
 {
     public static void main( String[] args) throws Exception {
+ 
+        Money a = new Money(10, 0);
+        Money b = new Money(3, 50);
+        
+        Money c = a.minus(b);
+        
+        System.out.println(a);  // 10.00e
+        System.out.println(b);  // 3.50e
+        System.out.println(c);  // 6.50e
+        
+        c = c.minus(a);       // NB: a new Money object is created, and is placed "at the end of the strand connected to c"
+        //  the old 6.5 euros at the end of the strand disappears and the Java garbage collector takes care of it
+        
+        
+        System.out.println(a);  // 10.00e
+        System.out.println(b);  // 3.50e
+        System.out.println(c);  // 0.00e
+
         /*int[] intArr ={5, 4,3,7,6,2};
         //Parastā masīva printēšana
         System.out.println(Arrays.toString(intArr));
@@ -80,7 +98,7 @@ public class App
 
         //ANSI Escape Sequences
 
-        String name = "Peteris";
+        /*String name = "Peteris";
 
         System.out.println("\033[0;33m");//Iestata krāsu uz dzeltanu
         System.out.println(name);
@@ -95,10 +113,34 @@ public class App
             Thread.sleep(500);//aptur programmas izpildi uz milisekundēm
             System.out.print(ConsoleColors.RESET + ConsoleColors.BLUE_BACKGROUND + " " + ConsoleColors.RESET);
 
-        }
+        }*/
+        //Immutable un mutable
+        //Nemaināms un maināms
 
 
+        // final neatļau mainīt vērtību
+        final String name = "John";
 
+
+        //static mainīgie piedr tikai klasei 1 ekseplārā
+        PersonManager maneger1 = new PersonManager();
+
+        //maneger1.delimiter = ",";//Nepareizi strādā ar brīdinājumu
+        //PersonManager.delimiter = ", "; //Pareizi
+        
+        PersonManager maneger2 = new PersonManager();
+        
+        //PersonManager.delimiter = ", ";
+        //System.out.println("delimiter:" + PersonManager.delimiter);
+        //System.out.println("delimiter:" + PersonManager.delimiter);
+
+    }
+
+    public static void print(){
+        //Static metodes neizmanto this un super atslēg vārdu
+        //Static metodēm nav tiešas piekļuves non static mainīgiem
+        System.out.println("123");
+        //izmanto lai neveidotu jaunu objektu
     }
 
 
