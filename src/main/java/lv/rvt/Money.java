@@ -12,6 +12,11 @@ public class Money {
             cents = cents % 100;
         }
 
+        if (euros - cents / 100 < 0 || cents < 0) {
+            euros = 0;
+            cents = 0;
+        }
+
         this.euros = euros;
         this.cents = cents;
     }
